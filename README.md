@@ -7,6 +7,7 @@
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
 - [Watch the Video Tutorial](#watch-the-video-tutorial)
+- [data](https://www.yelp.com/dataset/download)
 
 ## Introduction
 
