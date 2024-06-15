@@ -28,6 +28,12 @@ def sentiment_analysis(comment) -> str:
         return completion.choices[0].message['content']
     return "Empty"
 
+
+def fake_sentiment_analysis(comment) -> str:
+    if comment:
+        return "POSITIVE"
+    return "Empty"
+
 def start_streaming(spark):
     topic = 'customers_review'
     while True:
@@ -49,7 +55,10 @@ def start_streaming(spark):
 
             stream_df = stream_df.select(from_json(col('value'), schema).alias("data")).select(("data.*"))
 
-            sentiment_analysis_udf = udf(sentiment_analysis, StringType())
+            # query = stream_df.writeStream.outputMode("append").format("console").options(truncate=False).start()
+            # query.awaitTermination()
+
+            sentiment_analysis_udf = udf(fake_sentiment_analysis, StringType())
 
             stream_df = stream_df.withColumn('feedback',
                                              when(col('text').isNotNull(), sentiment_analysis_udf(col('text')))
