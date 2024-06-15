@@ -16,6 +16,7 @@ services:
     ports:
       - "9090:8080"
       - "7077:7077"
+      - "9999"
     networks:
       - code-with-yu
 
