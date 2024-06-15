@@ -63,6 +63,8 @@ The project is designed with the following components:
 4. start stream
 ```bash
 docker exec -it spark-master /bin/bash
+
+python job/streaming-socket.py
 ```
 
 5. Submit:
@@ -70,7 +72,7 @@ docker exec -it spark-master /bin/bash
 docker exec -it spark-worker spark-submit \
 --master spark://spark-master:7077 \
 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0 \
-jobs/spark-stream.py
+jobs/spark-streaming.py
 ```
 
 For more detailed instructions, please check out the video tutorial linked below.
