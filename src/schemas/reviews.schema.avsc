@@ -10,5 +10,6 @@
     { "name": "stars", "type": "float" },
     { "name": "date", "type": "string" },
     { "name": "text",  "type": "string" },
+    { "name": "feedback",  "type": "string" }
   ]
 }
