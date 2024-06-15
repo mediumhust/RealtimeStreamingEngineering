@@ -69,7 +69,7 @@ python job/streaming-socket.py
 
 5. Submit:
 ```bash
-docker exec -it spark-worker spark-submit \
+docker exec -it spark-master spark-submit \
 --master spark://spark-master:7077 \
 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0 \
 jobs/spark-streaming.py
